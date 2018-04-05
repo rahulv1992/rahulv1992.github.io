@@ -18,8 +18,17 @@
       <script type="text/javascript">
       btn = document.getElementById('cameraTakePicture');
       btn.onclick = function(){
-        cordova.exec(null, null, "StatusBar", "hide", []);
-        // localStorage.setItem('name', "ashish mittal");
+        cordova.navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI });
+
+                  function onSuccess(imageURI) {
+                      var image = document.getElementById('myImage');
+                      image.src = imageURI;
+                  }
+                  function onFail(message) {
+                      alert('Failed because: ' + message);
+                  }
+                  // localStorage.setItem('name', "ashish mittal");
       }
       </script>
   </body>
