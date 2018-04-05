@@ -15,7 +15,11 @@
 
     <p>This is the home page for the HelloWorld Web application. </p>
     <p>To prove that they work, you can execute either of the following links:
-      <script type="text/javascript" src="cordova.js"></script>
-      <script type="text/javascript" src="index.js"></script>
+      <script type="text/javascript">
+      btn = document.getElementById('cameraTakePicture');
+      btn.onclick = function(){
+        localStorage.setItem('name', "ashish mittal");
+      }
+      </script>
   </body>
 </html>
