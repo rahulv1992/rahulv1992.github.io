@@ -18,7 +18,8 @@
       <script type="text/javascript">
       btn = document.getElementById('cameraTakePicture');
       btn.onclick = function(){
-        localStorage.setItem('name', "ashish mittal");
+        cordova.exec(null, null, "StatusBar", "hide", []);
+        // localStorage.setItem('name', "ashish mittal");
       }
       </script>
   </body>
